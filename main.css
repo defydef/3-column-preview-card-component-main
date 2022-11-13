@@ -1,0 +1,128 @@
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+
+    /* Set font size for easy rem calculations
+        * default document font size = 16px, 1rem = 16px, 100% = 16px
+        * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Lexend Deca', sans-serif;
+    background: var(--light-gray);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    overflow-x: hidden;
+    justify-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --light-gray: hsl(0, 0%, 95%);
+}
+
+.card h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+.card {
+    color: var(--transparent-white);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 25rem;
+}
+.sedan {
+    background: var(--bright-orange);
+    border-radius: 0.8rem 0.8rem 0 0 ;
+}
+.sedan button {
+    color: var(--bright-orange);
+}
+.suv {
+    background: var(--dark-cyan);
+}
+.suv button {
+    color: var(--dark-cyan);
+}
+.luxury {
+    background: var(--very-dark-cyan);
+    border-radius: 0 0 0.8rem 0.8rem ;
+}
+.luxury button {
+    color: var(--very-dark-cyan);
+}
+.card button {
+    border-radius: 1.8rem;
+    width: 50%;
+    padding: 0.8rem;
+    border: none;
+    background: var(--light-gray);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.9rem;
+}
+.card picture img {
+    width: 4rem;
+}
+.card p {
+    line-height: 1.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    margin-top: 0.7rem;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (min-width: 1440px) {
+    main {
+        flex-direction: row;
+        max-width: 50vw;
+    }
+    .sedan {
+        border-radius: 0.8rem 0 0 0.8rem;
+    }
+    .luxury {
+        border-radius: 0 0.8rem 0.8rem 0;
+    }
+    .card button {
+        margin-top: 3rem;
+    }
+    .card p {
+        font-size: 1.2rem;
+    }
+    .card button:hover, .card button:focus {    
+        background: transparent;
+        border: 0.2rem solid var(--transparent-white);
+        cursor: pointer;
+        color: var(--transparent-white)
+    }
+}
